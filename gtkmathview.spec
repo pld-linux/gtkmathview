@@ -10,7 +10,7 @@ Source0:	http://www.cs.unibo.it/helm/mml-widget/sources/%{name}-%{version}.tar.g
 BuildRequires:	atk-devel
 BuildRequires:	fontconfig-devel
 BuildRequires:	freetype-devel
-BuildRequires:	gtk+2-devel >= 2.0.0
+BuildRequires:	gtk+2-devel >= 1:2.0.0
 BuildRequires:	gdome2-cpp_smart-devel
 BuildRequires:	libxml2-devel
 BuildRequires:	libstdc++-devel
