@@ -1,22 +1,22 @@
+# TODO: linking fixes (kill unnecessary -liberty, add necessary libs)
 Summary:	A GTK+ viewer to view MathML documents
 Summary(pl):	Przegl±darka dokumentów MathML dla GTK+
 Name:		gtkmathview
-Version:	0.6.3
+Version:	0.6.4
 Release:	0.1
-License:	GPL
+License:	GPL v2+
 Group:		X11/Applications/Graphics
+#Source0Download: http://helm.cs.unibo.it/mml-widget/
 Source0:	http://www.cs.unibo.it/helm/mml-widget/sources/%{name}-%{version}.tar.gz
-# Source0-md5:	937c739370d5a465193eb741ab40fccf
-BuildRequires:	atk-devel
-BuildRequires:	fontconfig-devel
-BuildRequires:	freetype-devel
-BuildRequires:	gtk+2-devel >= 1:2.0.0
-BuildRequires:	gdome2-cpp_smart-devel
-BuildRequires:	libxml2-devel
+# Source0-md5:	ca8ed0f58ccbdcfa7a507b20750c9d82
+URL:		http://helm.cs.unibo.it/mml-widget/
+BuildRequires:	gtk+2-devel >= 1:2.2.0
+BuildRequires:	gdome2-cpp_smart-devel >= 0.1.8
+BuildRequires:	libxml2-devel >= 2.0.0
+BuildRequires:	libxslt-progs
 BuildRequires:	libstdc++-devel
 BuildRequires:	pkgconfig
 BuildRequires:	t1lib-devel >= 1.2
-BuildRequires:	zlib-devel
 Requires:	%{name}-libs = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -30,6 +30,8 @@ GtkMathView jest przegl±dark± MathML dla GTK+.
 Summary:	A GTK+ Widget for rendering MathML documents
 Summary(pl):	Biblioteki GTK+ Widget do renderowania dokumentów MathML
 Group:		Development/Libraries
+Requires:	gdome2-cpp_smart >= 0.1.8
+Requires:	gtk+2 >= 1:2.2.0
 
 %description libs
 GTK+ Widgets for rendering MathML documents.
@@ -42,6 +44,9 @@ Summary:	A GTK+ Widget for rendering MathML documents - header files
 Summary(pl):	Biblioteki GTK+ Widget do renderowania dokumentów MathML - pliki nag³ówkowe
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
+Requires:	gdome2-cpp_smart-devel >= 0.1.8
+Requires:	gtk+2-devel >= 1:2.2.0
+Requires:	libxml2-devel >= 2.0.0
 
 %description devel
 Header files for GTK+ Widgets for rendering MathML documents.
@@ -80,9 +85,12 @@ rm -rf $RPM_BUILD_ROOT
 %clean
 rm -rf $RPM_BUILD_ROOT
 
+%post	libs -p /sbin/ldconfig
+%postun	libs -p /sbin/ldconfig
+
 %files
 %defattr(644,root,root,755)
-%doc AUTHORS BUGS ChangeLog HISTORY INSTALL LICENSE NEWS README TODO
+%doc AUTHORS BUGS CONTRIBUTORS ChangeLog HISTORY LICENSE NEWS README TODO
 %attr(755,root,root) %{_bindir}/*
 %{_mandir}/man?/*
 %{_datadir}/%{name}
@@ -90,6 +98,8 @@ rm -rf $RPM_BUILD_ROOT
 %files libs
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%dir %{_sysconfdir}/gtkmathview
+%config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/gtkmathview/gtkmathview.conf.xml
 
 %files devel
 %defattr(644,root,root,755)
