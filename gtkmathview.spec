@@ -6,6 +6,7 @@ Release:	0.1
 License:	GPL
 Group:		X11/Applications/Graphics
 Source0:	http://www.cs.unibo.it/helm/mml-widget/sources/%{name}-%{version}.tar.gz
+# Source0-md5:	937c739370d5a465193eb741ab40fccf
 BuildRequires:	atk-devel
 BuildRequires:	fontconfig-devel
 BuildRequires:	freetype-devel
