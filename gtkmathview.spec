@@ -1,5 +1,5 @@
-Summary:	A GTK viewer to view MathML documents
-Summary(pl):	Przegl±darka dokumentów MathML dla GTK
+Summary:	A GTK+ viewer to view MathML documents
+Summary(pl):	Przegl±darka dokumentów MathML dla GTK+
 Name:		gtkmathview
 Version:	0.6.3
 Release:	0.1
@@ -21,45 +21,45 @@ Requires:	%{name}-libs = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
-GtkMathView is a GTK Widget for rendering MathML documents.
+GtkMathView is a GTK+ Widget for rendering MathML documents.
 
 %description -l pl
-GtkMathView jest przegl±dark± MathML dla GTK.
+GtkMathView jest przegl±dark± MathML dla GTK+.
 
 %package libs
-Summary:	A GTK Widget for rendering MathML documents
-Summary(pl):	Biblioteki GTK Widget do renderowania dokumentów MathML
+Summary:	A GTK+ Widget for rendering MathML documents
+Summary(pl):	Biblioteki GTK+ Widget do renderowania dokumentów MathML
 Group:		Development/Libraries
 
 %description libs
-GTK Widgets for rendering MathML documents.
+GTK+ Widgets for rendering MathML documents.
 
 %description libs -l pl
-Biblioteki GTK Widget do renderowania dokumentów MathML.
+Biblioteki GTK+ Widget do renderowania dokumentów MathML.
 
 %package devel
-Summary:	A GTK Widget for rendering MathML documents - header files
-Summary(pl):	Biblioteki GTK Widget do renderowania dokumentów MathML - pliki nag³ówkowe
+Summary:	A GTK+ Widget for rendering MathML documents - header files
+Summary(pl):	Biblioteki GTK+ Widget do renderowania dokumentów MathML - pliki nag³ówkowe
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 
 %description devel
-Header files for GTK Widgets for rendering MathML documents.
+Header files for GTK+ Widgets for rendering MathML documents.
 
 %description devel -l pl
-Pliki nag³ówkowe dla GTK Widget do renderowania dokumentów MathML.
+Pliki nag³ówkowe dla GTK+ Widget do renderowania dokumentów MathML.
 
 %package static
-Summary:	A GTK Widget for rendering MathML documents - static library
-Summary(pl):	Biblioteki GTK Widget do renderowania dokumentów MathML - wersja statyczna
+Summary:	A GTK+ Widget for rendering MathML documents - static library
+Summary(pl):	Biblioteki GTK+ Widget do renderowania dokumentów MathML - wersja statyczna
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
 %description static
-Static version libraries for GTK for rendering MathML documents.
+Static version libraries for GTK+ for rendering MathML documents.
 
 %description static -l pl
-Wersja statyczna bibliotek dla GTK do renderowania dokumentów MathML.
+Wersja statyczna bibliotek dla GTK+ do renderowania dokumentów MathML.
 
 %prep
 %setup -q
