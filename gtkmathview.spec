@@ -10,10 +10,11 @@ Source0:	http://www.cs.unibo.it/helm/mml-widget/sources/%{name}-%{version}.tar.g
 BuildRequires:	atk-devel
 BuildRequires:	fontconfig-devel
 BuildRequires:	freetype-devel
-BuildRequires:	gtk+2-devel
+BuildRequires:	gtk+2-devel >= 2.0.0
 BuildRequires:	gdome2-cpp_smart-devel
 BuildRequires:	libxml2-devel
 BuildRequires:	libstdc++-devel
+BuildRequires:	pkgconfig
 BuildRequires:	t1lib-devel >= 1.2
 BuildRequires:	zlib-devel
 Requires:	%{name}-libs = %{version}-%{release}
@@ -37,8 +38,8 @@ GTK Widgets for rendering MathML documents.
 Biblioteki GTK Widget do renderowania dokumentów MathML.
 
 %package devel
-Summary:	A GTK Widget for rendering MathML documents - header files.
-Summary(pl):	Biblioteki GTK Widget do renderowania dokumentów MathML - pliki nag³ówkowe.
+Summary:	A GTK Widget for rendering MathML documents - header files
+Summary(pl):	Biblioteki GTK Widget do renderowania dokumentów MathML - pliki nag³ówkowe
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 
@@ -72,6 +73,7 @@ Wersja statyczna bibliotek dla GTK do renderowania dokumentów MathML.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+
 %{__make} install \
 	DESTDIR=$RPM_BUILD_ROOT
 
@@ -91,7 +93,7 @@ rm -rf $RPM_BUILD_ROOT
 
 %files devel
 %defattr(644,root,root,755)
-%{_libdir}/lib*.so
+%attr(755,root,root) %{_libdir}/lib*.so
 %{_libdir}/lib*.la
 %{_pkgconfigdir}/*.pc
 %{_includedir}/%{name}
