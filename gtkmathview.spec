@@ -100,8 +100,8 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %defattr(644,root,root,755)
 %doc AUTHORS BUGS CONTRIBUTORS ChangeLog HISTORY LICENSE NEWS README TODO
-%attr(755,root,root) %{_bindir}/*
-%{_mandir}/man?/*
+%attr(755,root,root) %{_bindir}/mathmlviewer
+%{_mandir}/man1/mathmlviewer.1*
 %{_datadir}/%{name}
 
 %files libs
