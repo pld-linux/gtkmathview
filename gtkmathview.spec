@@ -1,20 +1,20 @@
 Summary:	A GTK+ viewer to view MathML documents
 Summary(pl):	Przegl±darka dokumentów MathML dla GTK+
 Name:		gtkmathview
-Version:	0.6.4
+Version:	0.7.4
 Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Graphics
 #Source0Download: http://helm.cs.unibo.it/mml-widget/
 Source0:	http://www.cs.unibo.it/helm/mml-widget/sources/%{name}-%{version}.tar.gz
-# Source0-md5:	ca8ed0f58ccbdcfa7a507b20750c9d82
-Patch0:		%{name}-link.patch
+# Source0-md5:	3309357cfc4d09854da046773f14d919
+Patch0:		%{name}-no_static_viewer.patch
 URL:		http://helm.cs.unibo.it/mml-widget/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
 BuildRequires:	gtk+2-devel >= 1:2.2.0
 BuildRequires:	gdome2-cpp_smart-devel >= 0.1.8
-BuildRequires:	libxml2-devel >= 2.0.0
+BuildRequires:	libxml2-devel >= 2.6.7
 BuildRequires:	libxslt-progs
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:1.5
@@ -73,6 +73,8 @@ Wersja statyczna bibliotek dla GTK+ do renderowania dokumentów MathML.
 %setup -q
 %patch0 -p1
 
+echo 'm4_pattern_allow(AM_BINRELOC)' > acinclude.m4
+
 %build
 %{__libtoolize}
 %{__aclocal}
@@ -101,7 +103,8 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS BUGS CONTRIBUTORS ChangeLog HISTORY LICENSE NEWS README TODO
 %attr(755,root,root) %{_bindir}/mathmlviewer
-%{_mandir}/man1/mathmlviewer.1*
+%attr(755,root,root) %{_bindir}/mathmlsvg
+%{_mandir}/man1/math*.1*
 %{_datadir}/%{name}
 
 %files libs
