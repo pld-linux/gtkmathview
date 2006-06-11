@@ -2,7 +2,7 @@ Summary:	A GTK+ viewer to view MathML documents
 Summary(pl):	Przegl±darka dokumentów MathML dla GTK+
 Name:		gtkmathview
 Version:	0.7.6
-Release:	1
+Release:	2
 License:	GPL v2+
 Group:		X11/Applications/Graphics
 #Source0Download: http://helm.cs.unibo.it/mml-widget/
@@ -12,10 +12,10 @@ Patch0:		%{name}-no_static_viewer.patch
 URL:		http://helm.cs.unibo.it/mml-widget/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
-BuildRequires:	gtk+2-devel >= 1:2.2.0
+BuildRequires:	gtk+2-devel >= 1:2.9.2
 BuildRequires:	gdome2-cpp_smart-devel >= 0.1.8
-BuildRequires:	libxml2-devel >= 2.6.7
-BuildRequires:	libxslt-progs
+BuildRequires:	libxml2-devel >= 1:2.6.26
+BuildRequires:	libxslt-progs >= 1.1.17
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:1.5
 BuildRequires:	pkgconfig
@@ -48,8 +48,8 @@ Summary(pl):	Biblioteki GTK+ Widget do renderowania dokumentów MathML - pliki na
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	gdome2-cpp_smart-devel >= 0.1.8
-Requires:	gtk+2-devel >= 1:2.2.0
-Requires:	libxml2-devel >= 2.0.0
+Requires:	gtk+2-devel >= 2:2.9.2
+Requires:	libxml2-devel >= 1:2.6.26
 
 %description devel
 Header files for GTK+ Widgets for rendering MathML documents.
