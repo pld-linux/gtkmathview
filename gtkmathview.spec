@@ -1,13 +1,12 @@
 Summary:	A GTK+ viewer to view MathML documents
 Summary(pl):	Przegl±darka dokumentów MathML dla GTK+
 Name:		gtkmathview
-Version:	0.7.6
-Release:	3
+Version:	0.7.7
+Release:	1
 License:	GPL v2+
 Group:		X11/Applications/Graphics
-#Source0Download: http://helm.cs.unibo.it/mml-widget/
-Source0:	http://www.cs.unibo.it/helm/mml-widget/sources/%{name}-%{version}.tar.gz
-# Source0-md5:	4bb348c98367228f0de0a2216a13d48f
+Source0:	http://helm.cs.unibo.it/mml-widget/sources/%{name}-%{version}.tar.gz
+# Source0-md5:	1640c4b1df4565fa502e41a8e60e0d73
 Patch0:		%{name}-no_static_viewer.patch
 URL:		http://helm.cs.unibo.it/mml-widget/
 BuildRequires:	autoconf >= 2.50
@@ -19,6 +18,7 @@ BuildRequires:	libxslt-progs >= 1.1.17
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:1.5
 BuildRequires:	pkgconfig
+BuildRequires:	popt-devel
 BuildRequires:	t1lib-devel >= 1.2
 Requires:	%{name}-libs = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -73,7 +73,8 @@ Wersja statyczna bibliotek dla GTK+ do renderowania dokumentów MathML.
 %setup -q
 %patch0 -p1
 
-echo 'm4_pattern_allow(AM_BINRELOC)' > acinclude.m4
+# AM_BINRELOC
+tail -n +7449 aclocal.m4 > acinclude.m4
 
 %build
 %{__libtoolize}
@@ -81,7 +82,6 @@ echo 'm4_pattern_allow(AM_BINRELOC)' > acinclude.m4
 %{__autoconf}
 %{__autoheader}
 %{__automake}
-LDFLAGS="%{rpmldflags} -Wl,--as-needed"
 %configure \
 	--enable-libxml2 \
 	--enable-stats \
