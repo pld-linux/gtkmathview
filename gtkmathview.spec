@@ -1,5 +1,5 @@
 Summary:	A GTK+ viewer to view MathML documents
-Summary(pl.UTF-8):   Przeglądarka dokumentów MathML dla GTK+
+Summary(pl.UTF-8):	Przeglądarka dokumentów MathML dla GTK+
 Name:		gtkmathview
 Version:	0.7.7
 Release:	1
@@ -31,7 +31,7 @@ GtkMathView jest przeglądarką MathML dla GTK+.
 
 %package libs
 Summary:	A GTK+ Widget for rendering MathML documents
-Summary(pl.UTF-8):   Biblioteki GTK+ Widget do renderowania dokumentów MathML
+Summary(pl.UTF-8):	Biblioteki GTK+ Widget do renderowania dokumentów MathML
 Group:		Development/Libraries
 Requires:	gdome2-cpp_smart >= 0.1.8
 Requires:	gtk+2 >= 2:2.10.0
@@ -44,7 +44,7 @@ Biblioteki GTK+ Widget do renderowania dokumentów MathML.
 
 %package devel
 Summary:	A GTK+ Widget for rendering MathML documents - header files
-Summary(pl.UTF-8):   Biblioteki GTK+ Widget do renderowania dokumentów MathML - pliki nagłówkowe
+Summary(pl.UTF-8):	Biblioteki GTK+ Widget do renderowania dokumentów MathML - pliki nagłówkowe
 Group:		Development/Libraries
 Requires:	%{name}-libs = %{version}-%{release}
 Requires:	gdome2-cpp_smart-devel >= 0.1.8
@@ -59,7 +59,7 @@ Pliki nagłówkowe dla GTK+ Widget do renderowania dokumentów MathML.
 
 %package static
 Summary:	A GTK+ Widget for rendering MathML documents - static library
-Summary(pl.UTF-8):   Biblioteki GTK+ Widget do renderowania dokumentów MathML - wersja statyczna
+Summary(pl.UTF-8):	Biblioteki GTK+ Widget do renderowania dokumentów MathML - wersja statyczna
 Group:		Development/Libraries
 Requires:	%{name}-devel = %{version}-%{release}
 
