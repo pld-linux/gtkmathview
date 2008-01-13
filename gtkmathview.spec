@@ -19,7 +19,7 @@ BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:1.5
 BuildRequires:	pkgconfig
 BuildRequires:	popt-devel
-BuildRequires:	t1lib-devel >= 1.2
+BuildRequires:	t1lib-x-devel >= 1.2
 Requires:	%{name}-libs = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
