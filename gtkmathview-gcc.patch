@@ -54,3 +54,81 @@ diff -urN gtkmathview-0.8.0-orig/src/backend/ps/T1_FontDataBase.cc gtkmathview-0
  
  #include "String.hh"
  #include "T1_FontDataBase.hh"
+diff -ur gtkmathview-0.8.0.orig/auto/dumpEntitiesTable.cc gtkmathview-0.8.0/auto/dumpEntitiesTable.cc
+--- gtkmathview-0.8.0.orig/auto/dumpEntitiesTable.cc	2007-08-17 12:02:46.000000000 +0200
++++ gtkmathview-0.8.0/auto/dumpEntitiesTable.cc	2008-12-07 20:05:18.290524186 +0100
+@@ -19,6 +19,7 @@
+ #include "config.h"
+ #include <stdlib.h> // for exit(...)
+ #include <stdio.h>
++#include <cstring>
+ 
+ #if defined(HAVE_GMETADOM)
+ 
+diff -ur gtkmathview-0.8.0.orig/src/frontend/gmetadom/gmetadom_Builder.cc gtkmathview-0.8.0/src/frontend/gmetadom/gmetadom_Builder.cc
+--- gtkmathview-0.8.0.orig/src/frontend/gmetadom/gmetadom_Builder.cc	2007-08-17 12:02:34.000000000 +0200
++++ gtkmathview-0.8.0/src/frontend/gmetadom/gmetadom_Builder.cc	2008-12-07 20:16:54.940453877 +0100
+@@ -17,6 +17,7 @@
+ // along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+ #include <config.h>
++#include <cstring>
+ 
+ #include "gmetadom_Builder.hh"
+ #include "gmetadom_Model.hh"
+diff -ur gtkmathview-0.8.0.orig/src/frontend/gmetadom/gmetadom_Model.cc gtkmathview-0.8.0/src/frontend/gmetadom/gmetadom_Model.cc
+--- gtkmathview-0.8.0.orig/src/frontend/gmetadom/gmetadom_Model.cc	2007-08-17 12:02:34.000000000 +0200
++++ gtkmathview-0.8.0/src/frontend/gmetadom/gmetadom_Model.cc	2008-12-07 20:17:09.297743420 +0100
+@@ -17,6 +17,7 @@
+ // along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+ #include <config.h>
++#include <cstring>
+ 
+ #include <cassert>
+ 
+diff -ur gtkmathview-0.8.0.orig/src/frontend/gmetadom/gmetadom_Setup.cc gtkmathview-0.8.0/src/frontend/gmetadom/gmetadom_Setup.cc
+--- gtkmathview-0.8.0.orig/src/frontend/gmetadom/gmetadom_Setup.cc	2007-08-17 12:02:34.000000000 +0200
++++ gtkmathview-0.8.0/src/frontend/gmetadom/gmetadom_Setup.cc	2008-12-07 20:18:37.170443864 +0100
+@@ -17,6 +17,7 @@
+ // along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+ #include <config.h>
++#include <cstring>
+ 
+ #include "AbstractLogger.hh"
+ #include "gmetadom_Setup.hh"
+diff -ur gtkmathview-0.8.0.orig/src/view/gmetadom_MathView.cc gtkmathview-0.8.0/src/view/gmetadom_MathView.cc
+--- gtkmathview-0.8.0.orig/src/view/gmetadom_MathView.cc	2007-08-17 12:02:45.000000000 +0200
++++ gtkmathview-0.8.0/src/view/gmetadom_MathView.cc	2008-12-07 20:19:52.697102662 +0100
+@@ -17,6 +17,7 @@
+ // along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
+ #include <config.h>
++#include <cstring>
+ 
+ #include "AbstractLogger.hh"
+ #include "gmetadom_Model.hh"
+diff -ur gtkmathview-0.8.0.orig/src/widget/gtkmathview_gmetadom.cc gtkmathview-0.8.0/src/widget/gtkmathview_gmetadom.cc
+--- gtkmathview-0.8.0.orig/src/widget/gtkmathview_gmetadom.cc	2007-08-17 12:02:35.000000000 +0200
++++ gtkmathview-0.8.0/src/widget/gtkmathview_gmetadom.cc	2008-12-07 20:21:18.000000000 +0100
+@@ -16,6 +16,8 @@
+ // You should have received a copy of the GNU Lesser General Public License
+ // along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ 
++#include <cstring>
++
+ #include "gtkmathview_gmetadom.h"
+ #include "gtkmathview_common.cc"
+ #include "gtkmathview_decorators_common.cc"
+diff -ur gtkmathview-0.8.0.orig/viewer/aux.cc gtkmathview-0.8.0/viewer/aux.cc
+--- gtkmathview-0.8.0.orig/viewer/aux.cc	2007-08-17 12:02:45.000000000 +0200
++++ gtkmathview-0.8.0/viewer/aux.cc	2008-12-07 20:22:10.000000000 +0100
+@@ -19,6 +19,7 @@
+ #include <config.h>
+ #include <cstdlib>
+ #include <assert.h>
++#include <cstring>
+ 
+ #include <sstream>
+ 
