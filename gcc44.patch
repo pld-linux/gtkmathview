@@ -1,0 +1,10 @@
+--- gtkmathview-0.8.0/src/common/AbstractLogger.cc.orig	2009-11-25 18:31:18.134906729 +0100
++++ gtkmathview-0.8.0/src/common/AbstractLogger.cc	2009-11-25 18:31:45.633016844 +0100
+@@ -19,6 +19,7 @@
+ #include <config.h>
+ 
+ #include <stdarg.h>
++#include <cstdio>
+ 
+ #include "AbstractLogger.hh"
+ 
