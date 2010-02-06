@@ -13,12 +13,11 @@ Patch2:		gcc44.patch
 URL:		http://helm.cs.unibo.it/mml-widget/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
-BuildRequires:	gtk+2-devel >= 1:2.10.0
 BuildRequires:	gdome2-cpp_smart-devel >= 0.1.8
-BuildRequires:	libxml2-devel >= 1:2.6.26
-BuildRequires:	libxslt-progs >= 1.1.17
+BuildRequires:	gtk+2-devel >= 1:2.10.0
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:1.5
+BuildRequires:	libxml2-devel >= 1:2.6.26
 BuildRequires:	pkgconfig
 BuildRequires:	popt-devel
 BuildRequires:	t1lib-x-devel >= 1.2
