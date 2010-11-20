@@ -2,7 +2,7 @@ Summary:	A GTK+ viewer to view MathML documents
 Summary(pl.UTF-8):	Przeglądarka dokumentów MathML dla GTK+
 Name:		gtkmathview
 Version:	0.8.0
-Release:	6
+Release:	7
 License:	LGPL v3+
 Group:		X11/Applications/Graphics
 Source0:	http://helm.cs.unibo.it/mml-widget/sources/%{name}-%{version}.tar.gz
@@ -23,6 +23,8 @@ BuildRequires:	popt-devel
 BuildRequires:	t1lib-x-devel >= 1.2
 Requires:	%{name}-libs = %{version}-%{release}
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
+
+%define		skip_post_check_so	libmathview_backend_gtk.so.%{version} libmathview_backend_svg.so.%{version} libmathview_backend_ps.so.%{version}
 
 %description
 GtkMathView is a GTK+ Widget for rendering MathML documents.
