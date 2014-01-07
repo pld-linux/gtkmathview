@@ -2,7 +2,7 @@ Summary:	A GTK+ viewer to view MathML documents
 Summary(pl.UTF-8):	Przeglądarka dokumentów MathML dla GTK+
 Name:		gtkmathview
 Version:	0.8.0
-Release:	8
+Release:	9
 License:	LGPL v3+
 Group:		X11/Applications/Graphics
 Source0:	http://helm.cs.unibo.it/mml-widget/sources/%{name}-%{version}.tar.gz
@@ -10,6 +10,7 @@ Source0:	http://helm.cs.unibo.it/mml-widget/sources/%{name}-%{version}.tar.gz
 Patch0:		%{name}-no_static_viewer.patch
 Patch1:		%{name}-gcc.patch
 Patch2:		gcc44.patch
+Patch3:		gcc47.patch
 URL:		http://helm.cs.unibo.it/mml-widget/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -18,6 +19,7 @@ BuildRequires:	gtk+2-devel >= 1:2.10.0
 BuildRequires:	libstdc++-devel
 BuildRequires:	libtool >= 2:1.5
 BuildRequires:	libxml2-devel >= 1:2.6.26
+BuildRequires:	pangox-compat-devel
 BuildRequires:	pkgconfig
 BuildRequires:	popt-devel
 BuildRequires:	t1lib-x-devel >= 1.2
@@ -77,6 +79,7 @@ Wersja statyczna bibliotek dla GTK+ do renderowania dokumentów MathML.
 %patch0 -p1
 %patch1 -p1
 %patch2 -p1
+%patch3 -p1
 
 # AM_BINRELOC missing, just ignore
 echo 'AC_DEFUN([AM_BINRELOC], [])' > acinclude.m4
@@ -119,6 +122,7 @@ rm -rf $RPM_BUILD_ROOT
 %files libs
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_libdir}/lib*.so.*.*.*
+%attr(755,root,root) %ghost %{_libdir}/lib*.so.?
 %dir %{_sysconfdir}/gtkmathview
 %config(noreplace) %verify(not md5 mtime size) %{_sysconfdir}/gtkmathview/gtkmathview.conf.xml
 
