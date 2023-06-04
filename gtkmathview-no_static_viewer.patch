@@ -1,6 +1,6 @@
---- gtkmathview-0.7.8/viewer/Makefile.am.orig	2007-01-25 08:30:03.000000000 +0100
-+++ gtkmathview-0.7.8/viewer/Makefile.am	2007-06-16 00:01:40.247659531 +0200
-@@ -8,9 +8,6 @@
+--- gtkmathview-0.8.0/viewer/Makefile.am.orig	2007-08-17 12:02:45.000000000 +0200
++++ gtkmathview-0.8.0/viewer/Makefile.am	2023-06-03 22:34:46.305910674 +0200
+@@ -8,9 +8,6 @@ endif
  
  noinst_PROGRAMS = $(NULL)
  if COND_GMETADOM
@@ -10,7 +10,7 @@
  endif
  if COND_LIBXML2
  noinst_PROGRAMS += test_embedding
-@@ -24,17 +21,6 @@
+@@ -24,17 +21,6 @@ endif
  
  noinst_HEADERS = guiGTK.h
  
@@ -28,7 +28,7 @@
  mathmlviewer_SOURCES = main.cc aux.cc guiGTK.c
  mathmlviewer_LDADD = \
    $(POPT_LIBS) \
-@@ -46,7 +32,7 @@
+@@ -46,7 +32,7 @@ mathmlviewer_LDADD = \
    $(NULL)
  
  test_embedding_SOURCES = test_embedding.c dummy.cc
@@ -37,7 +37,7 @@
  test_embedding_LDADD = \
    -lstdc++ \
    $(XML_LIBS) \
-@@ -57,7 +43,7 @@
+@@ -57,7 +43,7 @@ test_embedding_LDADD = \
    $(NULL)
  
  test_loading_SOURCES = test_loading.c dummy.cc
@@ -46,7 +46,7 @@
  test_loading_LDADD = \
    -lstdc++ \
    $(XML_LIBS) \
-@@ -68,7 +54,7 @@
+@@ -68,7 +54,7 @@ test_loading_LDADD = \
    $(NULL)
  
  test_building_SOURCES = test_building.cc
@@ -55,7 +55,7 @@
  test_building_LDADD = \
    -lstdc++ \
    $(XML_LIBS) \
-@@ -79,7 +65,7 @@
+@@ -79,7 +65,7 @@ test_building_LDADD = \
    $(NULL)
  
  test_rendering_SOURCES = test_rendering.cc
@@ -64,7 +64,7 @@
  test_rendering_LDADD = \
    -lstdc++ \
    $(XML_LIBS) \
-@@ -92,7 +78,7 @@
+@@ -92,7 +78,7 @@ test_rendering_LDADD = \
    $(NULL)
  
  test_loading_reader_SOURCES = test_loading_reader.c
@@ -73,8 +73,3 @@
  test_loading_reader_LDADD = \
    -lstdc++ \
    $(XML_LIBS) \
-@@ -120,4 +106,3 @@
-   -I$(top_srcdir)/src/backend/common/ \
-   -I$(top_srcdir)/src/backend/gtk/ \
-   $(NULL)
--
