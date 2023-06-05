@@ -1,0 +1,44 @@
+--- gtkmathview-0.8.0/src/Makefile.am.orig	2007-04-25 10:14:46.000000000 +0200
++++ gtkmathview-0.8.0/src/Makefile.am	2023-06-05 05:42:54.508676777 +0200
+@@ -7,7 +7,7 @@ else
+ MAYBE_GTK_SUBDIRS = $(NULL)
+ endif
+ 
+-SUBDIRS = common engine backend frontend . view $(MAYBE_GTK_SUBDIRS)
++SUBDIRS = common engine frontend backend/common . backend view $(MAYBE_GTK_SUBDIRS)
+ 
+ if COND_BOXML
+ MAYBE_BOXML_LIBADD = \
+--- gtkmathview-0.8.0/src/backend/gtk/Makefile.am.orig	2007-08-17 12:02:42.000000000 +0200
++++ gtkmathview-0.8.0/src/backend/gtk/Makefile.am	2023-06-04 22:07:40.703315022 +0200
+@@ -76,6 +76,7 @@ mathview_HEADERS = \
+ #   Gtk_XftGlyphArea.hh
+ 
+ libmathview_backend_gtk_la_LIBADD = \
++  $(top_builddir)/src/libmathview.la \
+   $(PANGOX_LIBS) \
+   $(GTK_LIBS) \
+   $(T1_LIBS) \
+--- gtkmathview-0.8.0/src/backend/ps/Makefile.am.orig	2007-08-17 12:02:40.000000000 +0200
++++ gtkmathview-0.8.0/src/backend/ps/Makefile.am	2023-06-05 06:29:17.067018452 +0200
+@@ -35,6 +35,9 @@ endif
+ 
+ libmathview_backend_ps_la_CPPFLAGS = -DGMV_BackEnd_DLL
+ libmathview_backend_ps_la_LDFLAGS = -version-info @MATHVIEW_VERSION_INFO@
++libmathview_backend_ps_la_LIBADD = \
++  $(top_builddir)/src/libmathview.la \
++  $(T1_LIBS)
+ 
+ libmathview_backend_ps_la_SOURCES = \
+   PS_AreaFactory.hh \
+--- gtkmathview-0.8.0/src/backend/svg/Makefile.am.orig	2007-04-25 10:14:33.000000000 +0200
++++ gtkmathview-0.8.0/src/backend/svg/Makefile.am	2023-06-05 06:29:58.096465275 +0200
+@@ -30,6 +30,8 @@ endif
+ 
+ libmathview_backend_svg_la_CPPFLAGS = -DGMV_BackEnd_DLL
+ libmathview_backend_svg_la_LDFLAGS = -version-info @MATHVIEW_VERSION_INFO@
++libmathview_backend_svg_la_LIBADD = \
++  $(top_builddir)/src/libmathview.la
+ 
+ libmathview_backend_svg_la_SOURCES = \
+   SVG_AreaFactory.hh \
