@@ -1,0 +1,23 @@
+diff -ur gtkmathview-0.8.0.org/viewer/guiGTK.c gtkmathview-0.8.0/viewer/guiGTK.c
+--- gtkmathview-0.8.0.org/viewer/guiGTK.c	2007-08-17 12:02:46.000000000 +0200
++++ gtkmathview-0.8.0/viewer/guiGTK.c	2025-07-19 17:09:51.617092095 +0200
+@@ -152,7 +152,7 @@
+ void
+ GUI_init(int* argc, const char*** argv, char* title, guint width, guint height, gint logLevel)
+ {
+-  gtk_init(argc, argv);
++  gtk_init(argc, (char ***)argv);
+ 
+   window = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+   gtk_window_set_title(GTK_WINDOW(window), title);
+@@ -696,8 +696,9 @@
+ #endif // HAVE_GMETADOM
+ 
+ static gboolean
+-cursor_blink(GtkMathViewDefaultCursorDecorator* cursor)
++cursor_blink(gpointer data)
+ {
++  GtkMathViewDefaultCursorDecorator* cursor = (GtkMathViewDefaultCursorDecorator*)data;
+   gboolean enabled;
+   GdomeElement* focus;
+   gboolean draw_focus;

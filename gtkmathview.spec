@@ -2,7 +2,7 @@ Summary:	A GTK+ viewer to view MathML documents
 Summary(pl.UTF-8):	Przeglądarka dokumentów MathML dla GTK+
 Name:		gtkmathview
 Version:	0.8.0
-Release:	12
+Release:	13
 License:	LGPL v3+
 Group:		X11/Applications/Graphics
 Source0:	http://helm.cs.unibo.it/mml-widget/sources/%{name}-%{version}.tar.gz
@@ -19,6 +19,7 @@ Patch8:		%{name}-gcc6.patch
 Patch9:		%{name}-gcc7.patch
 Patch10:	%{name}-fix-cpp-headers.patch
 Patch11:	%{name}-link.patch
+Patch12:	build.patch
 URL:		http://helm.cs.unibo.it/mml-widget/
 BuildRequires:	autoconf >= 2.50
 BuildRequires:	automake
@@ -98,6 +99,7 @@ Wersja statyczna bibliotek dla GTK+ do renderowania dokumentów MathML.
 %patch -P9 -p1
 %patch -P10 -p1
 %patch -P11 -p1
+%patch -P12 -p1
 
 # AM_BINRELOC missing, just ignore
 echo 'AC_DEFUN([AM_BINRELOC], [])' > acinclude.m4
