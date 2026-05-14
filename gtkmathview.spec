@@ -2,7 +2,7 @@ Summary:	A GTK+ viewer to view MathML documents
 Summary(pl.UTF-8):	Przeglądarka dokumentów MathML dla GTK+
 Name:		gtkmathview
 Version:	0.8.0
-Release:	13
+Release:	14
 License:	LGPL v3+
 Group:		X11/Applications/Graphics
 Source0:	http://helm.cs.unibo.it/mml-widget/sources/%{name}-%{version}.tar.gz
@@ -110,6 +110,8 @@ echo 'AC_DEFUN([AM_BINRELOC], [])' > acinclude.m4
 %{__autoconf}
 %{__autoheader}
 %{__automake}
+export CFLAGS="%{rpmcflags} -std=gnu17"
+export CXXFLAGS="%{rpmcflags} -std=gnu17"
 %configure \
 	--enable-libxml2 \
 	--enable-stats \
